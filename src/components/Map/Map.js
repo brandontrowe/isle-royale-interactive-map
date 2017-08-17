@@ -14,7 +14,9 @@ class App extends Component {
         for (const id in camps) {
             L.marker([camps[id].location.lat, camps[id].location.long])
                 .addTo(map)
-                .bindPopup("<strong>" + camps[id] + " Campground</strong>");
+                .bindPopup(
+                    "<strong>" + camps[id].name + " Campground</strong>"
+                );
         }
     }
     render() {
