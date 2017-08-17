@@ -7,7 +7,9 @@ class App extends Component {
         console.log(this.props);
         return (
             <div className="App">
-                <Map camps={this.props.campgrounds} />
+                <div className="map-wrapper">
+                    <Map camps={this.props.campgrounds} />
+                </div>
             </div>
         );
     }

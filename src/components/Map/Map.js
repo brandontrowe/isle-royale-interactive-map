@@ -5,7 +5,7 @@ import "./Map.css";
 class App extends Component {
     componentDidMount() {
         const { camps } = this.props;
-        const map = L.map("map").setView([47.9959, -88.9093], 10);
+        const map = L.map("map").setView([47.9889, -88.8293], 10);
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
             attribution:
                 '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

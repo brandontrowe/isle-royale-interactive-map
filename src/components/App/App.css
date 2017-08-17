@@ -1,3 +1,9 @@
 .App {
     text-align: center;
 }
+
+.App .map-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+}
