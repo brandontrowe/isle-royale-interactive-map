@@ -19,7 +19,7 @@ class Map extends Component {
                             '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     }
                 ),
-                Imagery: window.L.esri.basemapLayer("Imagery"),
+                Satellite: window.L.esri.basemapLayer("Imagery"),
                 NationalGeographic: window.L.esri.basemapLayer(
                     "NationalGeographic"
                 ),
@@ -51,11 +51,9 @@ class Map extends Component {
                 .addTo(map)
                 .bindPopup("<strong>" + camps[id].name + " Campground</strong>")
                 .on("click", () => {
-                    console.log(this);
                     this.setQuickRefPoint(id);
                 });
         }
-        //setIcon(
 
         this.setState({
             mapRef: map,
@@ -72,10 +70,6 @@ class Map extends Component {
             if (prevState.focusedRefPoint === "a") {
                 this.setState(prevState => ({
                     focusedRefPoint: "b"
-                }));
-            } else if (prevState.focusedRefPoint === "b") {
-                this.setState(prevState => ({
-                    focusedRefPoint: null
                 }));
             }
 

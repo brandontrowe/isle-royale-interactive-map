@@ -20,7 +20,6 @@ class QuickReference extends Component {
             JSON.stringify(prevProps.quickReference) !==
             JSON.stringify(quickReference)
         ) {
-            console.log("updating...");
             if (quickReference.pointA && quickReference.pointB) {
                 this.setState({
                     distance: this.calculateDistance(
@@ -41,42 +40,46 @@ class QuickReference extends Component {
 
     render() {
         const { quickReference, camps } = this.props;
-        if (!quickReference.pointA && !quickReference.pointB) {
+        {
+            /*if (!quickReference.pointA && !quickReference.pointB) {
             return null;
-        } else {
-            return (
-                <div className="QuickReference">
-                    <div className="QuickReference--points">
-                        <QuickReferencePoint
-                            setFocusedPoint={this.props.setFocusedPoint}
-                            refPointId={"a"}
-                            focused={this.props.focusedRefPoint}
-                            referenceLocation={camps[quickReference.pointA]}
-                            altText={"Choose starting point"}
-                            markerIcon={pointAIconPath}
-                        />
-                        <QuickReferencePoint
-                            setFocusedPoint={this.props.setFocusedPoint}
-                            refPointId={"b"}
-                            focused={this.props.focusedRefPoint}
-                            referenceLocation={camps[quickReference.pointB]}
-                            altText={"Choose destination"}
-                            markerIcon={pointBIconPath}
-                        />
-                    </div>
-                    <div className="QuickReference--distance">
-                        {this.state.distance}
-                        <div
-                            className={
-                                "QuickReference--distance-unit" +
-                                (this.state.distance > 0 ? " show" : "")
-                            }
-                        >
-                            MILES
-                        </div>
+        } else {*/
+        }
+        return (
+            <div className="QuickReference">
+                <div className="QuickReference--points">
+                    <QuickReferencePoint
+                        setFocusedPoint={this.props.setFocusedPoint}
+                        refPointId={"a"}
+                        focused={this.props.focusedRefPoint}
+                        referenceLocation={camps[quickReference.pointA]}
+                        altText={"Choose starting point"}
+                        markerIcon={pointAIconPath}
+                    />
+                    <QuickReferencePoint
+                        setFocusedPoint={this.props.setFocusedPoint}
+                        refPointId={"b"}
+                        focused={this.props.focusedRefPoint}
+                        referenceLocation={camps[quickReference.pointB]}
+                        altText={"Choose destination"}
+                        markerIcon={pointBIconPath}
+                    />
+                </div>
+                <div className="QuickReference--distance">
+                    {this.state.distance}
+                    <div
+                        className={
+                            "QuickReference--distance-unit" +
+                            (this.state.distance > 0 ? " show" : "")
+                        }
+                    >
+                        MILES
                     </div>
                 </div>
-            );
+            </div>
+        );
+        {
+            /*}*/
         }
     }
 }

@@ -20,7 +20,6 @@ class MapTypeMenu extends Component {
     }
 
     render() {
-        console.log(Object.keys(this.props.mapTypes), "mapTypes");
         return (
             <div className="MapTypeMenu">
                 <button
