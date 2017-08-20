@@ -20,6 +20,7 @@ class MapTypeMenu extends Component {
     }
 
     render() {
+        console.log(Object.keys(this.props.mapTypes), "mapTypes");
         return (
             <div className="MapTypeMenu">
                 <button
@@ -35,7 +36,7 @@ class MapTypeMenu extends Component {
                     }
                 >
                     {this.props.mapTypes &&
-                        this.props.mapTypes.map((type, i) =>
+                        Object.keys(this.props.mapTypes).map((type, i) =>
                             <li
                                 key={type + "_" + i}
                                 onClick={() => {

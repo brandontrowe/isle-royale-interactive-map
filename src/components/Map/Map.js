@@ -10,12 +10,21 @@ class Map extends Component {
 
         this.state = {
             mapRef: null,
-            mapTypes: [
-                "USATopo",
-                "Imagery",
-                "NationalGeographic",
-                "Topographic"
-            ],
+            mapTypes: {
+                USATopo: window.L.esri.basemapLayer("USATopo"),
+                OpenStreetMap: window.L.tileLayer(
+                    "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+                    {
+                        attribution:
+                            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    }
+                ),
+                Imagery: window.L.esri.basemapLayer("Imagery"),
+                NationalGeographic: window.L.esri.basemapLayer(
+                    "NationalGeographic"
+                ),
+                Topographic: window.L.esri.basemapLayer("Topographic")
+            },
             mapLayer: null,
             mapMarkers: {},
             focusedRefPoint: "a"
@@ -30,7 +39,9 @@ class Map extends Component {
     componentDidMount() {
         const { camps } = this.props;
         const map = window.L.map("map").setView([47.9889, -88.8293], 10);
-        const mapLayer = window.L.esri.basemapLayer("USATopo").addTo(map);
+        const mapLayer = this.state.mapTypes[
+            Object.keys(this.state.mapTypes)[0]
+        ].addTo(map);
         let markers = {};
         for (const id in camps) {
             markers[id] = window.L
@@ -103,11 +114,9 @@ class Map extends Component {
     }
 
     toggleMapType(type) {
-        const mapLayer = window.L.esri
-            .basemapLayer(type)
-            .addTo(this.state.mapRef);
+        this.state.mapTypes[type].addTo(this.state.mapRef);
         this.state.mapLayer.remove();
-        this.setState({ mapLayer: mapLayer });
+        this.setState({ mapLayer: this.state.mapTypes[type] });
     }
 
     render() {
