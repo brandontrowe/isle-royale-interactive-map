@@ -1,0 +1,71 @@
+.QuickReference {
+    position: absolute;
+    z-index: 9001;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 10px;
+    background-color: #024169;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuickReference--points {
+    width: 70%;
+}
+
+.QuickReference--distance {
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.QuickReference--distance-unit {
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.QuickReference--distance-unit.show {
+    display: block;
+}
+
+.QuickReferencePoint {
+    text-align: left;
+    padding: 5px 5px 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-weight: 300;
+    color: #fff;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.QuickReferencePoint strong {
+    font-weight: 600;
+}
+
+.QuickReferencePoint:last-child {
+    margin: 0;
+}
+
+.QuickReferencePoint.focused {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.QuickReferencePoint--icon {
+    margin: 0 10px;
+}
+
+.QuickReferencePoint--icon img {
+    width: 12px;
+}

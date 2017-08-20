@@ -1,1 +1,1 @@
-# Isle Royale Interactive Map
+# Isle Royale Interactive Hiking Map

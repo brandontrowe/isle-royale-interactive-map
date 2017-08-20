@@ -15,10 +15,15 @@ const store = createStore(reducers); //, applyMiddleware(epicMiddleware));
 
 for (const id in campgroundsData.camps) {
     store.dispatch(
-        addCampground(id, campgroundsData.camps[id], {
-            lat: campgroundsData.locations[id].lat,
-            long: campgroundsData.locations[id].long
-        })
+        addCampground(
+            id,
+            campgroundsData.camps[id],
+            {
+                lat: campgroundsData.locations[id].lat,
+                long: campgroundsData.locations[id].long
+            },
+            campgroundsData.distance[id]
+        )
     );
 }
 

@@ -1,7 +1,7 @@
 const ADD_CAMPGROUND = "royale/camgrounds/ADD_CAMPGROUND";
 
-export function addCampground(id, name, location) {
-    return { type: ADD_CAMPGROUND, id, name, location };
+export function addCampground(id, name, location, distance) {
+    return { type: ADD_CAMPGROUND, id, name, location, distance };
 }
 
 const initialState = {};
@@ -13,7 +13,8 @@ export function reducer(state = initialState, action) {
                 ...state,
                 [action.id]: {
                     name: action.name,
-                    location: action.location
+                    location: action.location,
+                    distance: action.distance
                 }
             };
         default:
