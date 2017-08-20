@@ -1,12 +1,12 @@
 export const defaultIconPath = "images/default-marker-icon.png";
 export const defaultIcon = window.L.icon({
     iconUrl: defaultIconPath,
-    iconSize: [25, 41],
-    iconAnchor: [12.5, 41],
-    popupAnchor: [0, -41],
+    iconSize: [18, 30],
+    iconAnchor: [9, 30],
+    popupAnchor: [0, -30],
     shadowUrl: "images/default-marker-shadow.png",
-    shadowSize: [41, 41],
-    shadowAnchor: [12.5, 41]
+    shadowSize: [30, 30],
+    shadowAnchor: [9, 30]
 });
 
 export const pointAIconPath = "images/point-a-marker-icon.png";
